@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista de Funcionários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Menu de Navegação -->
+    <nav class="bg-white shadow mb-8 rounded">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-4">
+                <a href="funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Funcionários</a>
+                <a href="cadastro-funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Cadastro</a>
+                <a href="metricas.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Métricas</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">Funcionários Cadastrados</h1>
+
+        <table class="w-full table-auto border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="border border-gray-300 px-4 py-2">Nome</th>
+                    <th class="border border-gray-300 px-4 py-2">Departamento</th>
+                    <th class="border border-gray-300 px-4 py-2">Salário</th>
+                    <th class="border border-gray-300 px-4 py-2">Data de Contratação</th>
+                    <th class="border border-gray-300 px-4 py-2">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaFuncionarios">
+                <!-- Exemplo de funcionário -->
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">João Silva</td>
+                    <td class="border border-gray-300 px-4 py-2">Vendas</td>
+                    <td class="border border-gray-300 px-4 py-2">R$ 3.500,00</td>
+                    <td class="border border-gray-300 px-4 py-2">10/03/2023</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <button onclick="abrirModal(0)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                            Ver detalhes
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Maria Oliveira</td>
+                    <td class="border border-gray-300 px-4 py-2">RH</td>
+                    <td class="border border-gray-300 px-4 py-2">R$ 4.200,00</td>
+                    <td class="border border-gray-300 px-4 py-2">15/07/2022</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <button onclick="abrirModal(1)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                            Ver detalhes
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalFuncionario" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white w-96 p-6 rounded shadow relative">
+            <button onclick="fecharModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl">&times;</button>
+            <h2 class="text-xl font-bold mb-4">Detalhes do Funcionário</h2>
+            <div id="detalhesFuncionario">
+                <!-- Conteúdo gerado pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

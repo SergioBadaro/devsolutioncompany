@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Métricas de Funcionários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Menu de Navegação -->
+    <nav class="bg-white shadow mb-8 rounded">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-4">
+                    <a href="funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Funcionários</a>
+                    <a href="cadastro-funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Cadastro</a>
+                    <a href="metricas.html" class="py-5 px-3 text-blue-700 font-bold hover:text-blue-900 border-b-2 border-blue-700">Métricas</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6">Métricas de Funcionários</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Funcionários cadastrados no último mês</h2>
+                <p id="cadastradosMes" class="text-3xl font-bold text-blue-700">0</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Contratações no último mês</h2>
+                <p id="contratacoesMes" class="text-3xl font-bold text-green-700">0</p>
+            </div>
+            <div class="bg-red-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Demitidos no último mês</h2>
+                <p id="demissoesMes" class="text-3xl font-bold text-red-700">0</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Total de Funcionários</h2>
+                <p id="totalFuncionarios" class="text-3xl font-bold text-gray-700">0</p>
+            </div>
+            <div class="bg-yellow-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Ativos</h2>
+                <p id="ativos" class="text-3xl font-bold text-yellow-700">0</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">Em Licença</h2>
+                <p id="licenca" class="text-3xl font-bold text-purple-700">0</p>
+            </div>
+            <div class="bg-pink-50 p-4 rounded shadow">
+                <h2 class="font-semibold mb-2">De Férias</h2>
+                <p id="ferias" class="text-3xl font-bold text-pink-700">0</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

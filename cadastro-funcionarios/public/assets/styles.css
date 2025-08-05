@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fafc; /* Tailwind's gray-100 */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #2d3748; /* Tailwind's gray-800 */
+}
+
+a {
+    text-decoration: none;
+    color: #3182ce; /* Tailwind's blue-600 */
+}
+
+a:hover {
+    color: #2b6cb0; /* Tailwind's blue-700 */
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+button {
+    background-color: #3182ce; /* Tailwind's blue-600 */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2b6cb0; /* Tailwind's blue-700 */
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input, 
+.form-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0; /* Tailwind's gray-300 */
+    border-radius: 5px;
+}
+
+.form-field input:focus, 
+.form-field select:focus {
+    outline: none;
+    border-color: #3182ce; /* Tailwind's blue-600 */
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* Tailwind's blue-500 */
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de Funcionários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Menu de Navegação -->
+    <nav class="bg-white shadow mb-8 rounded">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-4">
+                <a href="funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Funcionários</a>
+                <a href="cadastro-funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Cadastro</a>
+                <a href="metricas.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Métricas</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Conteúdo da página de cadastro -->
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">Cadastro de Funcionário</h1>
+
+        <form id="formFuncionario" class="space-y-6">
+            <!-- Dados Pessoais -->
+            <fieldset class="border border-gray-300 p-4 rounded">
+                <legend class="text-lg font-semibold mb-4">Dados Pessoais</legend>
+
+                <div class="mb-4">
+                    <label for="nome" class="block font-medium mb-1">Nome Completo <span class="text-red-600">*</span></label>
+                    <input type="text" id="nome" name="nome" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label for="cpf" class="block font-medium mb-1">CPF <span class="text-red-600">*</span></label>
+                        <input type="text" id="cpf" name="cpf" maxlength="11" required pattern="\d{11}"
+                            title="Digite 11 números sem pontos ou traços"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="dataNascimento" class="block font-medium mb-1">Data de Nascimento <span class="text-red-600">*</span></label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="email" class="block font-medium mb-1">Email <span class="text-red-600">*</span></label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="telefone" class="block font-medium mb-1">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="endereco" class="block font-medium mb-1">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Rua, número, complemento"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <div>
+                        <label for="bairro" class="block font-medium mb-1">Bairro</label>
+                        <input type="text" id="bairro" name="bairro"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="cidade" class="block font-medium mb-1">Cidade</label>
+                        <input type="text" id="cidade" name="cidade"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="estado" class="block font-medium mb-1">Estado</label>
+                        <select id="estado" name="estado"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="cep" class="block font-medium mb-1">CEP</label>
+                        <input type="text" id="cep" name="cep" maxlength="8" pattern="\d{8}" placeholder="00000000"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Dados Profissionais -->
+            <fieldset class="border border-gray-300 p-4 rounded">
+                <legend class="text-lg font-semibold mb-4">Dados Profissionais</legend>
+
+                <div class="mb-4">
+                    <label for="cargo" class="block font-medium mb-1">Cargo <span class="text-red-600">*</span></label>
+                    <input type="text" id="cargo" name="cargo" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <div class="mb-4">
+                    <label for="departamento" class="block font-medium mb-1">Departamento <span class="text-red-600">*</span></label>
+                    <input type="text" id="departamento" name="departamento" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label for="dataContratacao" class="block font-medium mb-1">Data de Contratação <span class="text-red-600">*</span></label>
+                        <input type="date" id="dataContratacao" name="dataContratacao" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <div>
+                        <label for="salario" class="block font-medium mb-1">Salário <span class="text-red-600">*</span></label>
+                        <input type="number" id="salario" name="salario" min="0" step="0.01" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <div>
+                        <label for="horarioTrabalho" class="block font-medium mb-1">Horário de Trabalho</label>
+                        <input type="text" id="horarioTrabalho" name="horarioTrabalho" placeholder="Ex: 08:00 - 17:00"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <div>
+                        <label for="sexo" class="block font-medium mb-1">Sexo</label>
+                        <select id="sexo" name="sexo"
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                            <option value="Prefiro não informar">Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="estadoCivil" class="block font-medium mb-1">Estado Civil <span class="text-red-600">*</span></label>
+                        <select id="estadoCivil" name="estadoCivil" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="Solteiro">Solteiro</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viuvo">Viúvo</option>
+                            <option value="Separado">Separado/Divorciado</option>
+                            <option value="Amasiado">Amasiado</option>
+                        </select>
+                    </div>
+                    <div>
+    <label for="tipoContratacao" class="block font-medium mb-1">Tipo de Contratação <span class="text-red-600">*</span></label>
+    <select id="tipoContratacao" name="tipoContratacao" required
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Selecione</option>
+        <option value="CLT">CLT</option>
+        <option value="PJ">PJ</option>
+        <option value="Temporário">Temporário</option>
+        <option value="Estágio">Estágio</option>
+        <option value="Aprendiz">Aprendiz</option>
+        <option value="Outros">Outros</option>
+    </select>
+</div>
+
+                </div>
+            </fieldset>
+
+
+            <div class="text-center">
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+                    Cadastrar Funcionário
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
