@@ -1,51 +1,112 @@
-# Cadastro de Funcionários
+# Sistema de Gestão de Funcionários
 
-Este projeto é uma aplicação web para o cadastro de funcionários. Ele permite que os usuários insiram informações pessoais e profissionais de novos funcionários através de um formulário.
+Este projeto é um sistema web simples para cadastro, listagem e análise de métricas de funcionários, desenvolvido em HTML, CSS (Tailwind) e JavaScript puro, utilizando o `localStorage` do navegador para persistência dos dados.
 
-## Estrutura do Projeto
+## Funcionalidades
 
-O projeto possui a seguinte estrutura de diretórios:
+- **Cadastro de Funcionários:**  
+  Formulário completo para cadastrar novos funcionários, incluindo dados pessoais, profissionais e status.
+
+- **Listagem de Funcionários:**  
+  Exibe todos os funcionários cadastrados em uma tabela, com opção de visualizar detalhes individuais.
+
+- **Métricas:**  
+  Página dedicada a métricas, como:
+  - Funcionários cadastrados no último mês
+  - Contratações e demissões recentes
+  - Total de funcionários
+  - Funcionários ativos, em licença ou de férias
+
+- **Persistência Local:**  
+  Todos os dados são salvos no `localStorage` do navegador, dispensando backend.
+
+## Estrutura de Pastas
 
 ```
-cadastro-funcionarios
-├── public
-│   ├── index.html           # Página inicial com menu de navegação
-│   ├── funcionarios.html    # Página de cadastro de funcionários
-│   └── assets
-│       └── styles.css       # Estilos CSS para o projeto
-├── src
-│   ├── js
-│   │   ├── menu.js          # Lógica do menu de navegação
-│   │   └── funcionarios.js   # Lógica específica da página de funcionários
-│   └── types
-│       └── index.ts         # Definições de tipos TypeScript
-├── package.json              # Configuração do npm
-├── tsconfig.json             # Configuração do TypeScript
-└── README.md                 # Documentação do projeto
+/
+├── cadastro-funcionarios.html
+├── funcionarios.html
+├── metricas.html
+├── js/
+│   └── script.js
+└── README.md
 ```
 
-## Instalação
+## Como Usar
 
-1. Clone o repositório:
-   ```
-   git clone <URL_DO_REPOSITORIO>
-   ```
+1. **Abra o arquivo `cadastro-funcionarios.html`** no navegador para cadastrar novos funcionários.
+2. **Acesse `funcionarios.html`** para visualizar a lista de funcionários cadastrados.
+3. **Acesse `metricas.html`** para visualizar as métricas da empresa.
 
-2. Navegue até o diretório do projeto:
-   ```
-   cd cadastro-funcionarios
-   ```
+## Observações
 
-3. Instale as dependências:
-   ```
-   npm install
-   ```
+- O sistema utiliza apenas o navegador, sem necessidade de servidor.
+- Para simular demissões, licenças ou férias, é necessário editar manualmente o status do funcionário no `localStorage` ou adaptar o formulário para permitir essa edição.
+- O sistema é responsivo e utiliza Tailwind CSS via CDN.
 
-## Uso
+## Melhorias Futuras
 
-- Para iniciar o projeto, abra o arquivo `public/index.html` em um navegador.
-- Utilize o menu de navegação para acessar a página de cadastro de funcionários e outros recursos.
+- Permitir edição e exclusão de funcionários.
+- Adicionar autenticação de usuário.
+- Exportação dos dados para CSV.
+- Integração com backend para persistência real.
 
-## Contribuição
+---
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request ou relatar problemas.
+Desenvolvido por [Seu Nome].
+```# Sistema de Gestão de Funcionários
+
+Este projeto é um sistema web simples para cadastro, listagem e análise de métricas de funcionários, desenvolvido em HTML, CSS (Tailwind) e JavaScript puro, utilizando o `localStorage` do navegador para persistência dos dados.
+
+## Funcionalidades
+
+- **Cadastro de Funcionários:**  
+  Formulário completo para cadastrar novos funcionários, incluindo dados pessoais, profissionais e status.
+
+- **Listagem de Funcionários:**  
+  Exibe todos os funcionários cadastrados em uma tabela, com opção de visualizar detalhes individuais.
+
+- **Métricas:**  
+  Página dedicada a métricas, como:
+  - Funcionários cadastrados no último mês
+  - Contratações e demissões recentes
+  - Total de funcionários
+  - Funcionários ativos, em licença ou de férias
+
+- **Persistência Local:**  
+  Todos os dados são salvos no `localStorage` do navegador, dispensando backend.
+
+## Estrutura de Pastas
+
+```
+/
+├── cadastro-funcionarios.html
+├── funcionarios.html
+├── metricas.html
+├── js/
+│   └── script.js
+└── README.md
+```
+
+## Como Usar
+
+1. **Abra o arquivo `cadastro-funcionarios.html`** no navegador para cadastrar novos funcionários.
+2. **Acesse `funcionarios.html`** para visualizar a lista de funcionários cadastrados.
+3. **Acesse `metricas.html`** para visualizar as métricas da empresa.
+
+## Observações
+
+- O sistema utiliza apenas o navegador, sem necessidade de servidor.
+- Para simular demissões, licenças ou férias, é necessário editar manualmente o status do funcionário no `localStorage` ou adaptar o formulário para permitir essa edição.
+- O sistema é responsivo e utiliza Tailwind CSS via CDN.
+
+## Melhorias Futuras
+
+- Permitir edição e exclusão de funcionários.
+- Adicionar autenticação de usuário.
+- Exportação dos dados para CSV.
+- Integração com backend para persistência real.
+
+---
+
+Desenvolvido por Sérgio Badaró
