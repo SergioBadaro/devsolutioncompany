@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+        <h2 class="text-2xl font-bold mb-6 text-center">Cadastro</h2>
+        <form id="cadastroForm">
+            <div class="mb-4">
+                <label class="block mb-1" for="nome">Nome completo</label>
+                <input class="w-full px-3 py-2 border rounded" type="text" id="nome" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="email">E-mail</label>
+                <input class="w-full px-3 py-2 border rounded" type="email" id="email" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="senha">Senha</label>
+                <input class="w-full px-3 py-2 border rounded" type="password" id="senha" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="telefone">Telefone</label>
+                <input class="w-full px-3 py-2 border rounded" type="tel" id="telefone" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="cpf">CPF</label>
+                <input class="w-full px-3 py-2 border rounded" type="text" id="cpf" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="dataNascimento">Data de Nascimento</label>
+                <input class="w-full px-3 py-2 border rounded" type="date" id="dataNascimento" required />
+            </div>
+            <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                type="submit">Cadastrar</button>
+            <p class="mt-4 text-center text-sm">
+                Já tem conta? <a href="login.html" class="text-blue-600 hover:underline">Entrar</a>
+            </p>
+        </form>
+        <div class="my-6 flex items-center">
+            <hr class="flex-grow border-gray-300" />
+            <span class="mx-2 text-gray-400 text-sm">ou cadastre-se com</span>
+            <hr class="flex-grow border-gray-300" />
+        </div>
+        <div class="flex flex-col gap-3">
+            <button class="flex items-center justify-center gap-2 bg-blue-700 text-white py-2 rounded hover:bg-blue-800"
+                type="button" onclick="loginLinkedin()">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.867-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.041 0 3.603 2.002 3.603 4.604v5.592z" />
+                </svg>
+                LinkedIn
+            </button>
+            <button class="flex items-center justify-center gap-2 bg-red-600 text-white py-2 rounded hover:bg-red-700"
+                type="button" onclick="loginGoogle()">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M21.805 10.023h-9.765v3.954h5.627c-.243 1.243-1.486 3.646-5.627 3.646-3.389 0-6.146-2.803-6.146-6.261s2.757-6.261 6.146-6.261c1.93 0 3.227.823 3.97 1.532l2.713-2.635c-1.713-1.6-3.927-2.59-6.683-2.59-5.523 0-10 4.477-10 10s4.477 10 10 10c5.757 0 9.576-4.04 9.576-9.74 0-.654-.07-1.15-.155-1.646z" />
+                </svg>
+                Google
+            </button>
+        </div>
+        <div id="cadastroMsg" class="mt-4 text-center text-green-600"></div>
+    </div>
+    <script>
+
+        // Cria usuário admin padrão se não existir
+        if (!localStorage.getItem('admin@admin.com')) {
+            localStorage.setItem('admin@admin.com', JSON.stringify({
+                nome: 'Administrador',
+                email: 'admin@admin.com',
+                senha: 'admin123',
+                telefone: '',
+                cpf: '',
+                dataNascimento: ''
+            }));
+        }
+
+        document.getElementById('cadastroForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const telefone = document.getElementById('telefone').value;
+            const cpf = document.getElementById('cpf').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+            if (localStorage.getItem(email)) {
+                document.getElementById('cadastroMsg').textContent = 'E-mail já cadastrado!';
+                document.getElementById('cadastroMsg').classList.remove('text-green-600');
+                document.getElementById('cadastroMsg').classList.add('text-red-500');
+                return;
+            }
+            localStorage.setItem(email, JSON.stringify({ nome, email, senha, telefone, cpf, dataNascimento }));
+            document.getElementById('cadastroMsg').textContent = 'Cadastro realizado com sucesso!';
+            document.getElementById('cadastroMsg').classList.remove('text-red-500');
+            document.getElementById('cadastroMsg').classList.add('text-green-600');
+            setTimeout(() => window.location.href = "login.html", 1500);
+        });
+
+        function loginLinkedin() {
+            alert('Funcionalidade de cadastro com LinkedIn não implementada neste exemplo.');
+        }
+        function loginGoogle() {
+            alert('Funcionalidade de cadastro com Google não implementada neste exemplo.');
+        }
+    </script>
+</body>
+
+</html>

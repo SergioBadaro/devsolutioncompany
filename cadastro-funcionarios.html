@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cadastro de Funcionários</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 p-6">
 
     <!-- Menu de Navegação -->
     <nav class="bg-white shadow mb-8 rounded">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-            <div class="flex space-x-4">
-                <a href="funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Funcionários</a>
-                <a href="cadastro-funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Cadastro</a>
-                <a href="metricas.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Métricas</a>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-4">
+                    <a href="funcionarios.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Funcionários</a>
+                    <a href="cadastro-funcionarios.html"
+                        class="py-5 px-3 text-gray-700 hover:text-blue-700">Cadastro</a>
+                    <a href="metricas.html" class="py-5 px-3 text-gray-700 hover:text-blue-700">Métricas</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Conteúdo da página de cadastro -->
     <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
@@ -31,7 +34,8 @@
                 <legend class="text-lg font-semibold mb-4">Dados Pessoais</legend>
 
                 <div class="mb-4">
-                    <label for="nome" class="block font-medium mb-1">Nome Completo <span class="text-red-600">*</span></label>
+                    <label for="nome" class="block font-medium mb-1">Nome Completo <span
+                            class="text-red-600">*</span></label>
                     <input type="text" id="nome" name="nome" required
                         class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                 </div>
@@ -44,12 +48,14 @@
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label for="dataNascimento" class="block font-medium mb-1">Data de Nascimento <span class="text-red-600">*</span></label>
+                        <label for="dataNascimento" class="block font-medium mb-1">Data de Nascimento <span
+                                class="text-red-600">*</span></label>
                         <input type="date" id="dataNascimento" name="dataNascimento" required
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label for="email" class="block font-medium mb-1">Email <span class="text-red-600">*</span></label>
+                        <label for="email" class="block font-medium mb-1">Email <span
+                                class="text-red-600">*</span></label>
                         <input type="email" id="email" name="email" required
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
@@ -133,20 +139,23 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="departamento" class="block font-medium mb-1">Departamento <span class="text-red-600">*</span></label>
+                    <label for="departamento" class="block font-medium mb-1">Departamento <span
+                            class="text-red-600">*</span></label>
                     <input type="text" id="departamento" name="departamento" required
                         class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div>
-                        <label for="dataContratacao" class="block font-medium mb-1">Data de Contratação <span class="text-red-600">*</span></label>
+                        <label for="dataContratacao" class="block font-medium mb-1">Data de Contratação <span
+                                class="text-red-600">*</span></label>
                         <input type="date" id="dataContratacao" name="dataContratacao" required
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
 
                     <div>
-                        <label for="salario" class="block font-medium mb-1">Salário <span class="text-red-600">*</span></label>
+                        <label for="salario" class="block font-medium mb-1">Salário <span
+                                class="text-red-600">*</span></label>
                         <input type="number" id="salario" name="salario" min="0" step="0.01" required
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
@@ -170,7 +179,8 @@
                     </div>
 
                     <div>
-                        <label for="estadoCivil" class="block font-medium mb-1">Estado Civil <span class="text-red-600">*</span></label>
+                        <label for="estadoCivil" class="block font-medium mb-1">Estado Civil <span
+                                class="text-red-600">*</span></label>
                         <select id="estadoCivil" name="estadoCivil" required
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="">Selecione</option>
@@ -182,18 +192,19 @@
                         </select>
                     </div>
                     <div>
-    <label for="tipoContratacao" class="block font-medium mb-1">Tipo de Contratação <span class="text-red-600">*</span></label>
-    <select id="tipoContratacao" name="tipoContratacao" required
-        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="">Selecione</option>
-        <option value="CLT">CLT</option>
-        <option value="PJ">PJ</option>
-        <option value="Temporário">Temporário</option>
-        <option value="Estágio">Estágio</option>
-        <option value="Aprendiz">Aprendiz</option>
-        <option value="Outros">Outros</option>
-    </select>
-</div>
+                        <label for="tipoContratacao" class="block font-medium mb-1">Tipo de Contratação <span
+                                class="text-red-600">*</span></label>
+                        <select id="tipoContratacao" name="tipoContratacao" required
+                            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="CLT">CLT</option>
+                            <option value="PJ">PJ</option>
+                            <option value="Temporário">Temporário</option>
+                            <option value="Estágio">Estágio</option>
+                            <option value="Aprendiz">Aprendiz</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
 
                 </div>
             </fieldset>
@@ -209,4 +220,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
